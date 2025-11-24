@@ -85,7 +85,7 @@ void performanceTest(int height, int width, int runs) {
 
 int main() {
     srand((unsigned int)time(NULL));
-    int i;
+    int i, j;
     int width, height, size, runs;
     int choice;
 
@@ -122,10 +122,22 @@ int main() {
             imgCvtGrayInttoFloat_C(height, width, input, outputC);
 
             // display both outputs
-            printf("\n%-10s %-15s %-15s\n", "Input", "ASM Output", "C Output");
-            printf("------------------------------------------\n");
-            for(i = 0; i < size; i++) {
-                printf("%-10d %-15.4f %-15.4f\n", input[i], outputASM[i], outputC[i]);
+            printf("\nAssembly Output\n");
+            for (i = 0; i < height; i++) {
+                for (j = 0; j < width; j++) {
+                    int index = i * width + j;
+                    printf("%.2f ", outputASM[index]);
+                }
+                printf("\n");
+            }
+            
+            printf("\nC Output\n");
+            for (i = 0; i < height; i++) {
+                for (j = 0; j < width; j++) {
+                    int index = i * width + j;
+                    printf("%.2f ", outputC[index]);
+                }
+                printf("\n");
             }
 
             free(input);
@@ -142,3 +154,4 @@ int main() {
 
     return 0;
 }
+
