@@ -4,6 +4,9 @@ LBYARCH MP2 (grayscale int to float)
 **Group Members:**
 * Pua, Daniel Joseph | S17B
 
+## Video Link
+https://drive.google.com/file/d/1mqAAkh_eQfCPxzIziYznN8X1Czz_uYf6/view?usp=sharing
+
 ## Performance Analysis
 The function was tested on three image sizes (10x10, 100x100, 1000x1000) across 30 runs to get the average execution times for each. The Assembly code went through three iterations to optimize performance.
 
